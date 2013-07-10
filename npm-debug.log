@@ -1,0 +1,73 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'nodeunit' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose node symlink /usr/bin/node
+5 verbose read json /home/ubuntu/bitstarter/package.json
+6 warn package.json node-example@0.0.1 No repository field.
+7 warn package.json node-example@0.0.1 No readme data.
+8 verbose read json /home/ubuntu/bitstarter/node_modules/cheerio/package.json
+9 verbose read json /home/ubuntu/bitstarter/node_modules/commander/package.json
+10 verbose read json /home/ubuntu/bitstarter/node_modules/express/package.json
+11 verbose read json /home/ubuntu/bitstarter/node_modules/request/package.json
+12 verbose read json /home/ubuntu/bitstarter/node_modules/restler/package.json
+13 warn package.json restler@2.0.1 No repository field.
+14 verbose from cache /home/ubuntu/bitstarter/package.json
+15 verbose readDependencies using package.json deps
+16 verbose cache add [ 'nodeunit', null ]
+17 verbose cache add name=undefined spec="nodeunit" args=["nodeunit",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'nodeunit',
+18 verbose parsed url   path: 'nodeunit',
+18 verbose parsed url   href: 'nodeunit' }
+19 silly lockFile 10f0edac-nodeunit nodeunit
+20 verbose lock nodeunit /home/ubuntu/.npm/10f0edac-nodeunit.lock
+21 silly lockFile 10f0edac-nodeunit nodeunit
+22 silly lockFile 10f0edac-nodeunit nodeunit
+23 verbose addNamed [ 'nodeunit', '' ]
+24 verbose addNamed [ null, '' ]
+25 silly lockFile a2ad5191-nodeunit nodeunit@
+26 verbose lock nodeunit@ /home/ubuntu/.npm/a2ad5191-nodeunit.lock
+27 silly addNameRange { name: 'nodeunit', range: '', hasData: false }
+28 verbose url raw nodeunit
+29 verbose url resolving [ 'https://registry.npmjs.org/', './nodeunit' ]
+30 verbose url resolved https://registry.npmjs.org/nodeunit
+31 info trying registry request attempt 1 at 17:34:31
+32 http GET https://registry.npmjs.org/nodeunit
+33 http 404 https://registry.npmjs.org/nodeunit
+34 verbose bad json Host not found: registry.npmjs.org
+35 error registry error parsing json
+36 silly registry.get cb [ 404, { 'content-length': '34' } ]
+37 silly lockFile a2ad5191-nodeunit nodeunit@
+38 silly lockFile a2ad5191-nodeunit nodeunit@
+39 error SyntaxError: Unexpected token H
+39 error Host not found: registry.npmjs.org
+39 error     at Object.parse (native)
+39 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:23)
+39 error     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/index.js:148:22)
+39 error     at Request.EventEmitter.emit (events.js:98:17)
+39 error     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/index.js:876:14)
+39 error     at Request.EventEmitter.emit (events.js:117:20)
+39 error     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/index.js:827:12)
+39 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+39 error     at _stream_readable.js:910:16
+39 error     at process._tickCallback (node.js:415:13)
+40 error If you need help, you may report this log at:
+40 error     <http://github.com/isaacs/npm/issues>
+40 error or email it to:
+40 error     <npm-@googlegroups.com>
+41 error System Linux 3.2.0-40-virtual
+42 error command "/usr/bin/node" "/usr/bin/npm" "install" "nodeunit"
+43 error cwd /home/ubuntu/bitstarter
+44 error node -v v0.10.12
+45 error npm -v 1.2.32
+46 error type unexpected_token
+47 verbose exit [ 1, true ]

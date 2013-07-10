@@ -7,7 +7,7 @@ and basic DOM parsing.
 References:
 
  + cheerio
-  - https://github.com/MatthewMueller/cheerio
+   - https://github.com/MatthewMueller/cheerio
    - http://encosia.com/cheerio-faster-windows-friendly-alternative-jsdom/
    - http://maxogden.com/scraping-with-node.html
 
@@ -24,10 +24,8 @@ References:
 var fs = require('fs');
 var program = require('commander');
 var cheerio = require('cheerio');
-var rest=require('./restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var CHECKSURL_DEFAULT="http://sheltered-woodland-1423.herokuapp.com/"
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -63,49 +61,14 @@ var clone = function(fn) {
     return fn.bind({});
 };
 
-if(require.main == module){
+if(require.main == module) {
     program
-        .version('0.0.1')
-	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
-        .option('-f, --file <filename>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-        .option('-u, --url <url> ', 'Url to be parsed')
-	.parse(process.argv);
- 
-//     console.log("htmlfile",program.file);
-
-//     console.log("checks",program.checks);
- 
-//     console.log("url",program.url);
-
-    if (program.url!=null) {
-
-	
-     rest.get(program.url).on('complete',function(result){
-	if (result instanceof Error) {
-	    console.log('Error: ' + result.message);
-	    process.exit(1);
-	} else {
-//	    console.log("before output");
-//	    console.log(result);
-	    instr=result.toString();
-	    fs.writeFileSync('scraped.html',instr,'utf8');
-//	    console.log("wrote content to scraped.html");
-	    var checkJson =checkHtmlFile('scraped.html', program.checks);
-	    var outJson = JSON.stringify(checkJson, null, 4);
-	    console.log(outJson)
-
-	}
-        });
-
-	
-	}
-	else { var checkJson = checkHtmlFile(program.file, program.checks); 
-	       var outJson = JSON.stringify(checkJson, null, 4);
-	       console.log(outJson);
-
-	}    
-
-
+        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
+        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .parse(process.argv);
+    var checkJson = checkHtmlFile(program.file, program.checks);
+    var outJson = JSON.stringify(checkJson, null, 4);
+    console.log(outJson);
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
